@@ -12,7 +12,7 @@
     <modules>
         <module>hr-common</module>
         <module>hr-core</module>
-        <!-- <module>hr-admin</module> -->
+        <module>hr-admin</module>
     </modules>
 
     <properties>

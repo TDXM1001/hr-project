@@ -20,12 +20,12 @@ export const constRoutes: Array<RouteRecordRaw> = [
       {
         path: '/employee/org',
         name: 'OrgStructure',
-        component: () => import('../components/HelloWorld.vue') // 暂用HelloWorld占位
+        component: () => import('../views/Organization.vue') // 替换占位组件为真正实现
       },
       {
         path: '/employee/list',
         name: 'EmployeeList',
-        component: () => import('../components/HelloWorld.vue') // 暂用HelloWorld占位
+        component: () => import('../components/HelloWorld.vue')
       }
     ]
   }

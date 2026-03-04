@@ -2,13 +2,17 @@ package com.liyisoft.hr.common.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
+import javax.sql.DataSource;
 import java.util.Date;
 
 /**
  * 自定义 MyBatis-Plus 元数据处理器，用于自动填充审计字段
+ * （仅当 DataSource 就绪时生效）
  */
 @Component
+@ConditionalOnBean(DataSource.class)
 public class MyMetaObjectHandler implements MetaObjectHandler {
 
   /**

@@ -3,13 +3,16 @@ package com.liyisoft.hr.common.config;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import javax.sql.DataSource;
 
 /**
- * MyBatis-Plus 全局配置类
+ * MyBatis-Plus 全局配置类（仅当 DataSource 就绪时生效）
  */
 @Configuration
+@ConditionalOnBean(DataSource.class)
 public class MybatisPlusConfig {
 
   /**

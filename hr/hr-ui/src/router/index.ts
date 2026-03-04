@@ -1,25 +1,39 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    redirect: '/dashboard'
-  },
+export const constRoutes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: () => import('../components/HelloWorld.vue')
+    path: '/',
+    name: 'Layout',
+    component: () => import('../layout/index.vue'),
+    redirect: '/dashboard',
+    children: [
+      {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: () => import('../components/HelloWorld.vue')
+      },
+      {
+        path: '/employee/org',
+        name: 'OrgStructure',
+        component: () => import('../components/HelloWorld.vue') // 暂用HelloWorld占位
+      },
+      {
+        path: '/employee/list',
+        name: 'EmployeeList',
+        component: () => import('../components/HelloWorld.vue') // 暂用HelloWorld占位
+      }
+    ]
   }
 ];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: constRoutes
 });
 
 // 前置路由守卫挂载

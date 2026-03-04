@@ -13,6 +13,7 @@
         <module>hr-common</module>
         <module>hr-core</module>
         <module>hr-admin</module>
+        <module>hr-employee</module>
     </modules>
 
     <properties>
@@ -49,6 +50,12 @@
             <dependency>
                 <groupId>com.liyisoft.hr</groupId>
                 <artifactId>hr-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 内部员工档案模块依赖 -->
+            <dependency>
+                <groupId>com.liyisoft.hr</groupId>
+                <artifactId>hr-employee</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

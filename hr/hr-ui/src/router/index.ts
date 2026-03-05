@@ -10,7 +10,7 @@ export const constRoutes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Layout',
     component: () => import('../layout/index.vue'),
-    redirect: '/dashboard',
+    redirect: '/employee/org',
     children: [
       {
         path: '/dashboard',
@@ -20,12 +20,12 @@ export const constRoutes: Array<RouteRecordRaw> = [
       {
         path: '/employee/org',
         name: 'OrgStructure',
-        component: () => import('../views/Organization.vue') // 替换占位组件为真正实现
+        component: () => import('../views/Organization.vue')
       },
       {
         path: '/employee/list',
         name: 'EmployeeList',
-        component: () => import('../components/HelloWorld.vue')
+        component: () => import('../components/HelloWorld.vue') // 暂用HelloWorld占位
       }
     ]
   }

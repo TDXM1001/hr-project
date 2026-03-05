@@ -1,7 +1,7 @@
 <template>
   <el-container class="h-screen w-screen overflow-hidden bg-slate-50">
     <Sidebar />
-    <el-container class="flex flex-col h-full bg-slate-50">
+    <el-container direction="vertical" class="flex flex-col h-full bg-slate-50 w-full overflow-hidden">
       <Header />
       <el-main class="flex-1 p-6 relative overflow-hidden box-border">
         <!-- 路由匹配到的子组件 -->

@@ -63,8 +63,6 @@ import { ref } from 'vue';
 import { Plus } from '@element-plus/icons-vue';
 
 // 树形图搜索过滤
-const treeRef = ref();
-
 const filterNode = (value: string, data: any) => {
   if (!value) return true;
   return data.name.includes(value);
@@ -88,7 +86,7 @@ const deptTree = ref([
   }
 ]);
 
-const currentDept = ref<any>(deptTree.value[0].children[0]);
+const currentDept = ref<any>(deptTree.value[0]?.children?.[0]);
 
 const members = ref([
   { id: 1, name: '钱以雷', empId: 'EMP-001', position: '高级前端工程师', status: '在职' },

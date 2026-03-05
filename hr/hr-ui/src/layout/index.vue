@@ -1,9 +1,9 @@
 <template>
-  <el-container class="app-wrapper">
+  <el-container class="h-screen w-screen overflow-hidden bg-slate-50">
     <Sidebar />
-    <el-container class="main-container">
+    <el-container class="flex flex-col h-full bg-slate-50">
       <Header />
-      <el-main class="app-main">
+      <el-main class="flex-1 p-6 relative overflow-hidden box-border">
         <!-- 路由匹配到的子组件 -->
         <router-view />
       </el-main>
@@ -15,18 +15,3 @@
 import Sidebar from './Sidebar.vue';
 import Header from './Header.vue';
 </script>
-
-<style scoped>
-.app-wrapper {
-  height: 100vh;
-  width: 100%;
-}
-.main-container {
-  display: flex;
-  flex-direction: column;
-}
-.app-main {
-  background-color: #f0f2f5;
-  padding: 20px;
-}
-</style>
